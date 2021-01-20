@@ -9,20 +9,22 @@ function nhapMang () {
     return mang;
 }
 
-nhapMang();
+mang = nhapMang();
+console.log(mang);
 for (let j = 3; j >= 0; j--) {
     let count = 0;
+    console.log(mang);
     if (mang[j] < 2) {
-        mang.pop();
+        mang.splice(j, 1);
     } else {
         for (let i = 2; i < mang[j]; i++) {
             if (mang[j] % i == 0) {
-                count ++;
+                count++ ;
             }
         }
         console.log(count)
         if (count >= 1) {
-            mang.pop();
+            mang.splice(j, 1);
         }
        count = 0; 
     }
